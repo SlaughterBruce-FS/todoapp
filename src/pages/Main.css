@@ -1,0 +1,26 @@
+/* ion-content{
+    --padding-top: 50px !important;
+    text-align: center;
+    --padding-bottom: 50px !important;
+} */
+h5, h2, h3, p{
+    text-align: center;
+}
+
+.landing ion-input.custom {
+    --background: #373737;
+    --color: #fff;
+    --placeholder-color: #ddd;
+    --placeholder-opacity: .8;
+  
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+
+
+  }
+
+  .landing{
+    
+  }

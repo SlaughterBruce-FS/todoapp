@@ -10,10 +10,12 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+
+import Landing from './pages/Landing';
+import Landing2 from './pages/Landing2';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import MainTabs from './pages/MainTabs'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -39,7 +41,14 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
+      <IonRouterOutlet>
+        <Route exact path="/" component={Landing} />
+        <Route path="/login" component={Landing2} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+        <Route  path="/home" component={MainTabs}/ >
+      </IonRouterOutlet>
+      {/* <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/tab1">
             <Tab1 />
@@ -68,7 +77,7 @@ const App: React.FC = () => (
             <IonLabel>Tab 3</IonLabel>
           </IonTabButton>
         </IonTabBar>
-      </IonTabs>
+      </IonTabs> */}
     </IonReactRouter>
   </IonApp>
 );
