@@ -32,6 +32,7 @@ const Login: React.FC = () => {
     .then((response: AxiosResponse) => {
         console.log('Response: login data ', response.data);
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('userid', response.data.userId);
         navigation.push('/home', 'root', 'replace')
     })
     .catch(error => {

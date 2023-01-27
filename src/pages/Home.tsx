@@ -1,23 +1,24 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons, IonIcon, IonMenuButton,  } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons, IonIcon, IonMenuButton, IonFab,IonFabButton, IonModal } from '@ionic/react';
 
 // import Featured from '../components/Featured';
 import axios, { AxiosResponse } from 'axios';
 import { useState, useEffect } from "react";
 import React from 'react';
+import { add } from 'ionicons/icons';
 
 
 
 const Home: React.FC = () => {
 
 
-
+  const [sheetOpen, setSheet] = useState(false)
     
 
   
   
 
   return (
-    <IonPage>
+    <IonPage id='main-content'>
     <IonToolbar>
         <IonButtons slot="start">
           <IonMenuButton autoHide={false}></IonMenuButton>
@@ -28,7 +29,11 @@ const Home: React.FC = () => {
   
      <h1>testing home</h1>
 
-
+     <IonFab slot="fixed" vertical="bottom" horizontal="end">
+          <IonFabButton onClick={() => setSheet(true)}>
+            <IonIcon icon={add} />
+          </IonFabButton>
+        </IonFab>
       </IonContent>
     </IonPage>
   );

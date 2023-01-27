@@ -16,6 +16,7 @@ import Landing2 from './pages/Landing2';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import MainTabs from './pages/MainTabs'
+import SideMenu from './components/SideMenu'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,10 +37,13 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
+
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    <SideMenu />
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/" component={Landing} />
