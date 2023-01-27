@@ -31,8 +31,9 @@ const Login: React.FC = () => {
     axios.post(`http://todoapim.herokuapp.com/api/login`, loginData)
     .then((response: AxiosResponse) => {
         console.log('Response: login data ', response.data);
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userid', response.data.userId);
+        localStorage.setItem('token', JSON.stringify(response.data.token));
+        localStorage.setItem('userid', JSON.stringify(response.data.userId));
+        localStorage.setItem('name', JSON.stringify(response.data.name));
         navigation.push('/home', 'root', 'replace')
     })
     .catch(error => {

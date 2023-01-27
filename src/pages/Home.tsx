@@ -12,9 +12,13 @@ const Home: React.FC = () => {
 
 
   const [sheetOpen, setSheet] = useState(false)
-    
 
-  
+  const [name, setName] = useState('');
+
+    useEffect(() => {
+      const newName = JSON.parse(localStorage.getItem('name') as string);
+      setName(newName);
+    }, []);
   
 
   return (
@@ -27,7 +31,7 @@ const Home: React.FC = () => {
       </IonToolbar>
       <IonContent className='ion-padding' fullscreen>
   
-     <h1>testing home</h1>
+     <h1>Welcome {name}</h1>
 
      <IonFab slot="fixed" vertical="bottom" horizontal="end">
           <IonFabButton onClick={() => setSheet(true)}>
