@@ -5,7 +5,7 @@ import { personOutline, newspaperOutline, documentTextOutline, notificationsOutl
 import { IonReactRouter } from '@ionic/react-router';
 
 import Home from './Home';
-
+import Todo from './Todo';
 
 
 const Maintabs: React.FC = () => {
@@ -14,6 +14,7 @@ const Maintabs: React.FC = () => {
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path='/home/home' component={Home} />
+          <Route exact path='/home/home/todo/:id' component={Todo} />
           {/* <Route exact path='/home/search' component={Search} />
           <Route exact path='/home/movies' component={Search} />
           <Route exact path='/home/home/moviesingle/:id/:type' component={MovieSingle} />
